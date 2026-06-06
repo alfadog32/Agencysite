@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA PROTECTION // Automated Content Security</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { background-color: #0a0a0a; color: #f5f5f5; font-family: 'Inter', sans-serif; }
+        .glow-hover:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-zinc-800 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div class="text-xl font-bold tracking-widest text-amber-500">AURA<span class="text-white font-light">SECURE</span></div>
+        <nav class="space-x-6 text-sm tracking-wide text-zinc-400">
+            <a href="#features" class="hover:text-white transition">Technology</a>
+            <a href="#pricing" class="hover:text-white transition">Tiers</a>
+            <a href="/dashboard" class="border border-zinc-700 px-4 py-1.5 rounded hover:bg-white hover:text-black transition">Client Portal</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 py-20 flex-grow w-full text-center">
+        <span class="text-xs font-semibold tracking-widest text-amber-500 uppercase px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full">Automated Intellectual Property Defense</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-6 mb-4 max-w-3xl mx-auto">
+            Your Content. Your Revenue. <br><span class="text-zinc-500">Completely Protected.</span>
+        </h1>
+        <p class="text-zinc-400 max-w-xl mx-auto text-base md:text-lg mb-12 font-light">
+            Our autonomous neural network continuously crawls leak networks, indexing and identifying pirated content using sub-pixel perceptual matching. We issue immediate, legally binding takedowns before a single view is lost.
+        </p>
+
+        <!-- Pricing Grid / Upfront Payment Triggers -->
+        <div id="pricing" class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-10">
+            {% for id, tier in tiers.items() %}
+            <div class="bg-zinc-950 border border-zinc-800 rounded-xl p-8 flex flex-col justify-between text-left transition duration-300 hover:border-zinc-700 glow-hover">
+                <div>
+                    <h3 class="text-lg font-bold tracking-wide text-white mb-1">{{ tier.name }}</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wider mb-6">{{ tier.platforms }}</p>
+                    <div class="text-3xl font-black text-white mb-6">{{ tier.price }}<span class="text-xs font-normal text-zinc-500"> / retainer</span></div>
+                    <ul class="space-y-3 text-sm text-zinc-400 font-light mb-8">
+                        <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span> {{ tier.scans }}</li>
+                        <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span> Automated DMCA Despatch</li>
+                        <li class="flex items-center"><span class="text-amber-500 mr-2">✓</span> Clear Dashboard Reporting</li>
+                    </ul>
+                </div>
+                <a href="/checkout/{{ id }}" class="block w-full text-center bg-zinc-900 hover:bg-amber-500 hover:text-black text-white font-semibold text-sm py-3 rounded-lg transition duration-200">
+                    Secure Client Retainer
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 py-6 text-center text-xs text-zinc-600">
+        &copy; 2026 AURASECURE Global Protection Services. All corporate assets encrypted.
+    </footer>
+
+</body>
+</html>
